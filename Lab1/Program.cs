@@ -49,7 +49,7 @@ namespace Lab1
 
         public static bool ValidateYear(int year)
         {
-            return year > 0;
+            return year >= 0;
         }
     }
 
@@ -58,19 +58,9 @@ namespace Lab1
         public string GetDayNameFromDate(DateTime dateTime);
         public bool IsDayWeekend(DateTime dateTime);
         public int GetDaysFromMonthDate(DateTime dateTime);
+        public bool IsLeapYear(DateTime dateTime);
     }
-
-    public enum Days
-    {
-        Sunday,
-        Monday,
-        Tuesday,
-        Wednesday,
-        Thursday,
-        Friday,
-        Saturday
-        
-    }
+    
     public class Month
     {
         public const int January = 1;
@@ -132,6 +122,15 @@ namespace Lab1
             }
         };
 
+        private static readonly List<DateTime> Holidays = new List<DateTime>
+        {
+            new DateTime(31, 12, 0000),
+            new DateTime(1, 9, 0000),
+            new DateTime(23, 2, 0000),
+            new DateTime(8, 3, 0000),
+            new DateTime(7, 1, 0000),
+        };
+        
         public string GetDayNameFromDate(DateTime dateTime)
         {
             var dayCode = CalculateDayCode(dateTime);
@@ -155,16 +154,55 @@ namespace Lab1
 
         private int CalculateDayCode(DateTime dateTime)
         {
+            var additional = 0;
+            if (IsLeapYear(dateTime))
+            {
+                additional = 1;
+            }
             var monthCode = CalculateMonthCode(dateTime);
             var yearCode = CalculateYearCode(dateTime);
             var day = dateTime.Day;
-            var dayValue = (day + monthCode + yearCode) % 7;
+            var dayValue = (day + additional + monthCode + yearCode) % 7;
             return dayValue;
         }
         
+        /// <summary>
+        /// https://docs.microsoft.com/ru-ru/office/troubleshoot/excel/determine-a-leap-year
+        /// </summary>
+        /// <param name="dateTime"></param>
+        public bool IsLeapYear(DateTime dateTime)
+        {
+        
+            var year = dateTime.Year;
+            if (year % 4 == 0)
+            {
+                if (year % 100 == 0)
+                {
+                    if (year % 400 == 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
         public bool IsDayWeekend(DateTime dateTime)
         {
-            throw new NotImplementedException();
+            var day = GetDayNameFromDate(dateTime);
+            if (day == "SAT" || day == "SUN")
+            {
+                return true;
+            }
+
+            foreach (var holiday in Holidays)
+            {
+                if (holiday.Day == dateTime.Day && holiday.Month == dateTime.Month)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public int GetDaysFromMonthDate(DateTime dateTime)

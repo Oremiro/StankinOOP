@@ -44,5 +44,55 @@ namespace Lab1.Tests
             var correctResult = "FRI";
             Assert.False(correctResult == result);
         }
+        
+        [Fact]
+        public void IsLeapYearSuccess()
+        {
+            ICalendar calendar = new Calendar();
+            var date = new DateTime(17, 2, 2000);
+            var leap = calendar.IsLeapYear(date);
+            var correctResult = true;
+            Assert.True(correctResult == leap);
+        }
+        
+        [Fact]
+        public void IsLeapYearFail()
+        {
+            ICalendar calendar = new Calendar();
+            var date = new DateTime(17, 2, 2021);
+            var leap = calendar.IsLeapYear(date);
+            var correctResult = true;
+            Assert.False(correctResult == leap);
+        }
+        
+        [Fact]
+        public void IsDayWeekendSuccessFalseStatement()
+        {
+            ICalendar calendar = new Calendar();
+            var date = new DateTime(17, 2, 2021);
+            var weekend = calendar.IsLeapYear(date);
+            var correctResult = true;
+            Assert.False(correctResult == weekend);
+        }
+        
+        [Fact]
+        public void IsDayWeekendSuccessTrueStatementHoliday()
+        {
+            ICalendar calendar = new Calendar();
+            var date = new DateTime(31, 12, 2021);
+            var weekend = calendar.IsDayWeekend(date);
+            var correctResult = true;
+            Assert.True(correctResult == weekend);
+        }
+        
+        [Fact]
+        public void IsDayWeekendSuccessTrueStatementWeekend()
+        {
+            ICalendar calendar = new Calendar();
+            var date = new DateTime(27, 2, 2021);
+            var weekend = calendar.IsDayWeekend(date);
+            var correctResult = true;
+            Assert.True(correctResult == weekend);
+        }
     }
 }
