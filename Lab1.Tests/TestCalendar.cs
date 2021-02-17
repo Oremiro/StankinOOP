@@ -94,5 +94,35 @@ namespace Lab1.Tests
             var correctResult = true;
             Assert.True(correctResult == weekend);
         }
+        
+        [Fact]
+        public void GetDaysFromMonthRegYear()
+        {
+            ICalendar calendar = new Calendar();
+            var date = new DateTime(27, 3, 2021);
+            var days = calendar.GetDaysFromMonthDate(date);
+            var correctResult = 31;
+            Assert.True(correctResult == days);
+        }
+        
+        [Fact]
+        public void GetDaysFromMonthRegYearEven()
+        {
+            ICalendar calendar = new Calendar();
+            var date = new DateTime(27, 4, 2021);
+            var days = calendar.GetDaysFromMonthDate(date);
+            var correctResult = 30;
+            Assert.True(correctResult == days);
+        }
+        
+        [Fact]
+        public void GetDaysFromMonthLeapYear()
+        {
+            ICalendar calendar = new Calendar();
+            var date = new DateTime(27, 2, 2000);
+            var days = calendar.GetDaysFromMonthDate(date);
+            var correctResult = 29;
+            Assert.True(correctResult == days);
+        }
     }
 }

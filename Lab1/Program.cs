@@ -207,7 +207,23 @@ namespace Lab1
 
         public int GetDaysFromMonthDate(DateTime dateTime)
         {
-            throw new NotImplementedException();
+            var month = dateTime.Month;
+            if (month % 2 == 1)
+            {
+                return 31;
+            }
+
+            if (month == 2)
+            {
+                if (IsLeapYear(dateTime))
+                {
+                    return 29;
+                }
+
+                return 28;
+            }
+
+            return 30;
         }
     }
 
