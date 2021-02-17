@@ -8,6 +8,7 @@ namespace Lab1.Tests
         [Fact]
         public void Test1()
         {
+            
         }
     }
 }
