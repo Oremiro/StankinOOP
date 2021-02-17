@@ -18,31 +18,31 @@ namespace Lab1
 
         private static readonly Dictionary<int, List<int>> MonthCodes = new Dictionary<int, List<int>>()
         {
-            [0] = new()
+            [0] = new List<int>()
             {
                 Month.April, Month.July
             },
-            [1] = new()
+            [1] = new List<int>()
             {
                 Month.January, Month.October
             },
-            [2] = new()
+            [2] = new List<int>()
             {
                 Month.May
             },
-            [3] = new()
+            [3] = new List<int>()
             {
                 Month.August
             },
-            [4] = new()
+            [4] = new List<int>()
             {
                 Month.February, Month.March, Month.November
             },
-            [5] = new()
+            [5] = new List<int>()
             {
                 Month.June
             },
-            [6] = new()
+            [6] = new List<int>()
             {
                 Month.September, Month.December
             }

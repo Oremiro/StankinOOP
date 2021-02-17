@@ -2,9 +2,9 @@
 {
     public interface ICalendar
     {
-        public string GetDayNameFromDate(DateTime dateTime);
-        public bool IsDayWeekend(DateTime dateTime);
-        public int GetDaysFromMonthDate(DateTime dateTime);
-        public bool IsLeapYear(DateTime dateTime);
+        string GetDayNameFromDate(DateTime dateTime);
+        bool IsDayWeekend(DateTime dateTime);
+        int GetDaysFromMonthDate(DateTime dateTime);
+        bool IsLeapYear(DateTime dateTime);
     }
 }
