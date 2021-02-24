@@ -69,7 +69,7 @@ namespace Lab3
             return day;
         }
 
-        public bool IsDayWeekend(DateTime dateTime)
+        public virtual bool IsDayWeekend(DateTime dateTime)
         {
             var day = GetDayNameFromDate(dateTime);
             if (day.ToString() == DaysNames.Saturday || day.ToString() == DaysNames.Sunday)
