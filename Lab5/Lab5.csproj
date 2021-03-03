@@ -9,4 +9,8 @@
       <ProjectReference Include="..\Lab3\Lab3.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    </ItemGroup>
+
 </Project>

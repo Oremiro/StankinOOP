@@ -1,9 +1,12 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a7d0cb2c_002D4844_002D4b84_002Db53e_002Dbe7371ce5d15/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="TestCalendar" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::51A39688-3D11-439E-AFBA-5B395C9BE8BA::net5.0::Lab2.Tests.UnitTest1&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::A3DB41D9-47C7-4B7A-A9B9-13D44156773A::net5.0::Lab3.Tests.GrigorianCalendarTest&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::A3DB41D9-47C7-4B7A-A9B9-13D44156773A::net5.0::Lab3.Tests.JulianCalendarTest&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
+  &lt;Or&gt;&#xD;
+    &lt;TestAncestor&gt;&#xD;
+      &lt;TestId&gt;xUnit::51A39688-3D11-439E-AFBA-5B395C9BE8BA::net5.0::Lab2.Tests.UnitTest1&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::A3DB41D9-47C7-4B7A-A9B9-13D44156773A::net5.0::Lab3.Tests.GrigorianCalendarTest&lt;/TestId&gt;&#xD;
+      &lt;TestId&gt;xUnit::A3DB41D9-47C7-4B7A-A9B9-13D44156773A::net5.0::Lab3.Tests.JulianCalendarTest&lt;/TestId&gt;&#xD;
+    &lt;/TestAncestor&gt;&#xD;
+    &lt;ProjectFile&gt;9C2089AE-EF5E-493A-8902-57799F72D95C/f:UnitTest1.cs&lt;/ProjectFile&gt;&#xD;
+  &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
 	<s:Boolean x:Key="/Default/UserDictionary/Words/=Grigorian/@EntryIndexedValue">True</s:Boolean></wpf:ResourceDictionary>

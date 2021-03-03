@@ -8,7 +8,8 @@ namespace Lab5
         
         public override bool IsDayWeekend(DateTime dateTime)
         {
-            return base.IsDayWeekend(dateTime);
+            var days = CalendarJsonParser.GetHolidayDayFromJson();
+            return days.Contains(dateTime);
         }
     }
 }

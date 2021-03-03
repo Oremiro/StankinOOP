@@ -1,4 +1,7 @@
 ﻿using System;
+using Calendar = Lab3.Calendar;
+using DateTime = Lab1.DateTime;
+using ICalendar = Lab3.ICalendar;
 
 namespace Lab5
 {
@@ -6,7 +9,10 @@ namespace Lab5
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ICalendar calendar = new ExtendedGrigorianCalendar();
+            var date = new DateTime(27, 2, 2021);
+            var weekend = calendar.IsDayWeekend(date);
+            Console.WriteLine(weekend);
         }
     }
 }
