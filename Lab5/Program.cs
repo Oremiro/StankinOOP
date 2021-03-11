@@ -9,10 +9,10 @@ namespace Lab5
     {
         static void Main(string[] args)
         {
-            ICalendar calendar = new ExtendedGrigorianCalendar();
-            var date = new DateTime(27, 2, 2021);
+            var calendar = new ExtendedGrigorianCalendar();
+            var date = new DateTime(27, 3, 2021);
             var weekend = calendar.IsDayWeekend(date);
-            Console.WriteLine(weekend);
+            Console.WriteLine(calendar.GetWorkCalendarFormatString(date));
         }
     }
 }

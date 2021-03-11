@@ -11,9 +11,9 @@ namespace Lab5
 {
     public class CalendarJsonParser
     {
-        public static List<DateTime> GetHolidayDayFromJson()
+        public static List<string> GetHolidayDayFromJson()
         {
-            var list = new List<DateTime>();
+            var list = new List<string>();
             var dir = TryGetSolutionDirectoryInfo();
             using (var r = new StreamReader($"{dir.FullName}\\Files\\workCalendar.json"))
             {
@@ -28,7 +28,7 @@ namespace Lab5
                     {
                         var match =  new String(day.Where(Char.IsDigit).ToArray());
                         var dayInt= Convert.ToInt32(match.ToString());
-                        list.Add(new DateTime(dayInt, month, 2021));
+                        list.Add(new DateTime(dayInt, month, 2021).ToString());
                     }
                 }
             }
